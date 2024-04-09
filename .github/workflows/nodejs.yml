@@ -16,7 +16,7 @@ jobs:
         image: docker:20.10.12
         options: --privileged
         ports:
-          - 8080:8080
+          - 8087:8087
 
     steps:
     - uses: actions/checkout@v3
@@ -31,7 +31,7 @@ jobs:
         
     - name: Run the Docker container
       run: |
-        docker run -d -p 8080:8080 --name mynodeapp nodejs-app:latest
+        docker run -d -p 8087:8087 --name mynodeapp nodejs-app:latest
 
     # Test dependencies are typically installed via a project's package.json
     # and should ideally not be handled separately in CI workflows.
